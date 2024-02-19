@@ -34,8 +34,8 @@ final class Properties: Model {
     var owner: String
 
     // Foreign Key to an Agent model.
-  //  @Parent(key: "AgentID")
-  //  var agentID: UUID
+//    @Parent(key: "AgentID")
+//    var agentID: UUID
 
     @Field(key: "Price")
     var price: Int

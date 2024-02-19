@@ -21,7 +21,8 @@ public func configure(_ app: Application) async throws {
     app.migrations.add(CreateTodo())
     app.migrations.add(CreateProperties())
     app.migrations.add(CreateAppointment())
-
+    app.migrations.add(CreateCustomer())
+    app.migrations.add(CreateAgent())
     app.views.use(.leaf)
 
     
