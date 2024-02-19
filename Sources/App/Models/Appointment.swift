@@ -7,6 +7,8 @@
 
 import Fluent
 import Vapor
+import FluentPostgresDriver
+
 
 
 final class Appointment: Model {

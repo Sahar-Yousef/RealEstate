@@ -5,9 +5,10 @@
 //  Created by Sahora on 18/02/2024.
 //
 
-import Foundation
 import Fluent
 import Vapor
+import FluentPostgresDriver
+
 
 
 final class Agent: Model {
@@ -25,12 +26,16 @@ final class Agent: Model {
     @Field(key: "Contact")
     var Contact: Int
     
+    @Children (for: \.$agent) //Raltionship with Properties table
+    var Properties: [Properties]
+    
     init() { }
     
     init(id: UUID? = nil, Name: String, Contact: Int) {
         self.id = id
         self.Name = Name
         self.Contact = Contact
+    //    self.Properties = Properties
         
     }
 }

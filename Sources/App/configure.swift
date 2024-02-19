@@ -18,10 +18,10 @@ public func configure(_ app: Application) async throws {
         tls: .prefer(try .init(configuration: .clientDefault)))
     ), as: .psql)
 
-    app.migrations.add(CreateTodo())
+  //  app.migrations.add(CreateTodo())
     app.migrations.add(CreateProperties())
-    app.migrations.add(CreateAppointment())
-    app.migrations.add(CreateCustomer())
+ //   app.migrations.add(CreateAppointment())
+  //  app.migrations.add(CreateCustomer())
     app.migrations.add(CreateAgent())
     app.views.use(.leaf)
 

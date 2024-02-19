@@ -6,24 +6,36 @@
 //
 
 import Fluent
+import Vapor
+import FluentPostgresDriver
 
 struct CreateProperties: AsyncMigration {
     func prepare(on database: Database) async throws {
         try await database.schema("Properties")
             .id()
-            .field("Type", .string, .required)
-            .field("Size", .int, .required)
-            .field("City", .string, .required)
-            .field("Address", .string, .required)
-            .field("Owner", .string, .required)
-        
-//            .id()
-        
-            .field("Price", .int, .required)
-            .field("Desc", .string, .required)
-            .field("Image", .string, .required)
-            .field("PropertyStatus", .string, .required)
+            .field("Type", .string )
+            .field("Size", .int )
+            .field("City", .string )
+            .field("Address", .string )
+            .field("Owner", .string )
+            .field("Price", .int )
+            .field("Desc", .string )
+            .field("Image", .string )
+            .field("PropertyStatus", .string )
+            .field("AgentId", .uuid , .references("Agent", "id"))
             .create()
+        
+          //  .field("Type", .string )
+         //  .field("Size", .int )
+          //  .field("City", .string )
+         //   .field("Address", .string )
+         //   .field("Owner", .string )
+         //   .field("Price", .int )
+         //   .field("Desc", .string )
+         //   .field("Image", .string )
+          //  .field("PropertyStatus", .string )
+           // .field("Agent_Id", .uuid , .references("agent", "id"))
+         //   .create()
     }
 
     func revert(on database: Database) async throws {

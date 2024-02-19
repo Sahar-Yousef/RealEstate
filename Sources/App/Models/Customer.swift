@@ -6,9 +6,9 @@
 //
 
 
-import Foundation
 import Fluent
 import Vapor
+import FluentPostgresDriver
 
 
 final class Customer: Model {

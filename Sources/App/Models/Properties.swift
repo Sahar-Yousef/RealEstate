@@ -8,6 +8,7 @@
 
 import Fluent
 import Vapor
+import FluentPostgresDriver
 
 final class Properties: Model {
     // Name of the table or collection.
@@ -34,8 +35,8 @@ final class Properties: Model {
     var owner: String
 
     // Foreign Key to an Agent model.
-//    @Parent(key: "AgentID")
-//    var agentID: UUID
+    @Parent(key: "AgentId") //FK
+    var agent: Agent
 
     @Field(key: "Price")
     var price: Int
@@ -51,17 +52,18 @@ final class Properties: Model {
 
     init() { }
 
-    init(id: UUID? = nil, name: String, size: Int, city: String, address: String, owner: String, agentID: UUID, price: Int, description: String, image: String, propertyStatus: String) {
+    init(id: UUID? = nil, name: String, size: Int, city: String, address: String, owner: String, agentID: UUID, price: Int, description: String, image: String, propertyStatus: String, AgentId: UUID) {
         self.id = id
         self.name = name
         self.size = size
         self.city = city
         self.address = address
         self.owner = owner
-     //   self.$agentID.id = agentID
+        self.$agent.id = AgentId
         self.price = price
         self.description = description
         self.image = image
         self.propertyStatus = propertyStatus
     }
+    
 }
