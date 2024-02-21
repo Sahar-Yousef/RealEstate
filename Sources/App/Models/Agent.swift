@@ -11,7 +11,7 @@ import FluentPostgresDriver
 
 
 
-final class Agent: Model {
+final class Agent: Model, Content {
     // Name of the table or collection.
     static let schema = "Agent"
     

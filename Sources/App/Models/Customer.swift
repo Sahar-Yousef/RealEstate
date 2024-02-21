@@ -11,7 +11,7 @@ import Vapor
 import FluentPostgresDriver
 
 
-final class Customer: Model {
+final class Customer: Model, Content {
     // Name of the table or collection.
     static let schema = "Customer"
     

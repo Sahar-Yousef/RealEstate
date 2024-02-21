@@ -10,7 +10,7 @@ import Fluent
 import Vapor
 import FluentPostgresDriver
 
-final class Properties: Model {
+final class Properties: Model , Content{
     // Name of the table or collection.
     static let schema = "Properties"
 
