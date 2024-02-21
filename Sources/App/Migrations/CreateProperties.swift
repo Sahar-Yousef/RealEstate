@@ -25,17 +25,6 @@ struct CreateProperties: AsyncMigration {
             .field("AgentId", .uuid , .references("Agent", "id"))
             .create()
         
-          //  .field("Type", .string )
-         //  .field("Size", .int )
-          //  .field("City", .string )
-         //   .field("Address", .string )
-         //   .field("Owner", .string )
-         //   .field("Price", .int )
-         //   .field("Desc", .string )
-         //   .field("Image", .string )
-          //  .field("PropertyStatus", .string )
-           // .field("Agent_Id", .uuid , .references("agent", "id"))
-         //   .create()
     }
 
     func revert(on database: Database) async throws {

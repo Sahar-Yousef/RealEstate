@@ -15,6 +15,8 @@ struct CreateAppointment: AsyncMigration {
             .field("Date", .string, .required)
             .field("Time", .string, .required)
             .field("AppointmentStatus", .string, .required)
+            .field("PropertiesId", .uuid , .references("Properties", "id"))
+            .field("CustomerID", .uuid , .references("Customer", "id"))
             .create()
     }
 

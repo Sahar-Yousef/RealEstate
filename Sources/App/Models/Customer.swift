@@ -26,6 +26,10 @@ final class Customer: Model {
     @Field(key: "Contact")
     var Contact: Int
     
+    //Raltionship with Appointment table
+    @Children (for: \.$customer )
+    var appointment: [Appointment]
+    
     init() { }
     
     init(id: UUID? = nil, Name: String, Contact: Int) {

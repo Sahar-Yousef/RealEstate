@@ -28,23 +28,26 @@ final class Appointment: Model {
 
     @Field(key: "AppointmentStatus")
     var AppointmentStatus: String
+    
+    // Foreign Key to an Agent model.
+    @Parent(key: "PropertiesId") //FK
+    var properties: Properties
+    
+    // Foreign Key to an Customer model.
+    @Parent(key: "CustomerId") //FK
+    var customer: Customer
+    
 
-////     Foreign Key to an Agent model.
-//    @Parent(key: "AgentID")
-//var agentID: UUID
-//    // Foreign Key to an Customer model.
-//    @Parent(key: "CustomerID")
-//    var CustomerID: UUID
 
     init() { }
 
-    init(id: UUID? = nil, Date: String, Time: String, AppointmentStatus: String,  agentID: UUID, CustomerID: UUID ) {
+    init(id: UUID? = nil, Date: String, Time: String, AppointmentStatus: String,  PropertiesId: UUID, CustomerID: UUID ) {
         self.id = id
         self.Date = Date
         self.Time = Time
         self.AppointmentStatus = AppointmentStatus
-        //self.$agentID.id = agentID
-       // self.$CustomerID.id = CustomerID
+        self.$properties.id = PropertiesId
+        self.$customer.id = CustomerID
 
         
     }

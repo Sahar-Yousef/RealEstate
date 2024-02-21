@@ -11,7 +11,7 @@ struct CreateCustomer: AsyncMigration {
     func prepare(on database: Database) async throws {
         try await database.schema("Customer")
             .id()
-            .field("Nme", .string, .required)
+            .field("Name", .string, .required)
             .field("Contact", .int, .required)
             .create()
     }

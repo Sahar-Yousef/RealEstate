@@ -34,7 +34,7 @@ final class Properties: Model {
     @Field(key: "Owner")
     var owner: String
 
-    // Foreign Key to an Agent model.
+    // Foreign Key to an Agent model
     @Parent(key: "AgentId") //FK
     var agent: Agent
 
@@ -49,6 +49,10 @@ final class Properties: Model {
 
     @Field(key: "PropertyStatus")
     var propertyStatus: String
+    
+    //Raltionship with Appointment table
+    @Children (for: \.$properties )
+    var appointment: [Appointment]
 
     init() { }
 
@@ -59,7 +63,7 @@ final class Properties: Model {
         self.city = city
         self.address = address
         self.owner = owner
-        self.$agent.id = AgentId
+        self.$agent.id = AgentId //FK
         self.price = price
         self.description = description
         self.image = image

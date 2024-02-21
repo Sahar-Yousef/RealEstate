@@ -26,8 +26,10 @@ final class Agent: Model {
     @Field(key: "Contact")
     var Contact: Int
     
-    @Children (for: \.$agent) //Raltionship with Properties table
+    //Raltionship with Properties table
+    @Children (for: \.$agent )
     var Properties: [Properties]
+
     
     init() { }
     
