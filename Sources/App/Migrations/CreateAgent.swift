@@ -11,8 +11,8 @@ struct CreateAgent: AsyncMigration {
     func prepare(on database: Database) async throws {
         try await database.schema("Agent")
             .id()
-            .field("Nme", .string, .required)
-            .field("Contact", .int, .required)
+            .field("Name", .string, .required)
+            .field("Contact", .int)
             .create()
     }
 

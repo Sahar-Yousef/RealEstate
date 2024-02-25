@@ -6,6 +6,7 @@ import Vapor
 
 // configures your application
 public func configure(_ app: Application) async throws {
+    do{
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
@@ -19,14 +20,26 @@ public func configure(_ app: Application) async throws {
     ), as: .psql)
 
   //  app.migrations.add(CreateTodo())
+   
+   
+   
+    
+    
+    app.migrations.add(CreateAgent())
     app.migrations.add(CreateProperties())
     app.migrations.add(CreateCustomer())
     app.migrations.add(CreateAppointment())
-    app.migrations.add(CreateAgent())
     app.views.use(.leaf)
 
     
 
     // register routes
     try routes(app)
+  
+     } catch {
+         // Handle configuration errors
+         print("Failed to configure application: \(error)")
+         throw error // Re-throw the error to propagate it further
+     }
 }
+

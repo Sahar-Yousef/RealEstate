@@ -24,7 +24,7 @@ final class Agent: Model, Content {
     var Name: String
     
     @Field(key: "Contact")
-    var Contact: Int
+    var Contact: Int?
     
     //Raltionship with Properties table
     @Children (for: \.$agent )
@@ -33,7 +33,7 @@ final class Agent: Model, Content {
     
     init() { }
     
-    init(id: UUID? = nil, Name: String, Contact: Int) {
+    init(id: UUID? = nil, Name: String, Contact: Int?) {
         self.id = id
         self.Name = Name
         self.Contact = Contact

@@ -14,6 +14,8 @@ import Vapor
 //agent has POST & GET
 struct AgentController: RouteCollection {
     
+  
+       
     func boot(routes: RoutesBuilder) throws {
         let agentsRoute = routes.grouped("agents")
         
@@ -26,9 +28,25 @@ struct AgentController: RouteCollection {
         try await Agent.query(on: req.db).all()
     }
     
+//    func create(req: Request) async throws -> Agent {
+//        let agent = try req.content.decode(Agent.self)
+//        try await agent.save(on: req.db)
+//        return agent
+//   
+//        
+//    }
+    
     func create(req: Request) async throws -> Agent {
-        let agent = try req.content.decode(Agent.self)
-        try await agent.save(on: req.db)
-        return agent
+        do {
+            let agent = try req.content.decode(Agent.self)
+            print("Received agent data: \(agent)")
+            try await agent.save(on: req.db)
+            return agent
+        } catch {
+            print("Error creating agent: \(error)")
+            throw error
+        }
     }
+
+    
 }
