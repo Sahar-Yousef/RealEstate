@@ -6,6 +6,7 @@ Welcome to the RealEstate app! This app is designed to help manage and organize 
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Database Schema](#database-schema)
 - [Database Structure](#database-structure)
 - [CRUD Operations](#crud-operations)
 - [Technologies Used](#technologies-used)
@@ -42,6 +43,9 @@ git clone https://github.com/Sahar-Yousef/RealEstate.git
 5. Build and run the app in Xcode.
 
 The app will be available at `http://localhost:8080`.
+
+## Database Schema
+https://github.com/Sahar-Yousef/RealEstate/blob/main/Screenshot.png
 
 ## Database Structure
 
