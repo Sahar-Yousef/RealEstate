@@ -21,13 +21,13 @@ final class Appointment: Model, Content {
 
     
     @Field(key: "Date")
-    var Date: String
+    var Date: String?
 
     @Field(key: "Time")
-    var Time: String
+    var Time: String?
 
     @Field(key: "AppointmentStatus")
-    var AppointmentStatus: String
+    var AppointmentStatus: String?
     
     // Foreign Key to an Agent model.
     @Parent(key: "PropertiesId") //FK
@@ -36,18 +36,19 @@ final class Appointment: Model, Content {
     // Foreign Key to an Customer model.
     @Parent(key: "CustomerId") //FK
     var customer: Customer
+
     
 
 
     init() { }
 
-    init(id: UUID? = nil, Date: String, Time: String, AppointmentStatus: String,  PropertiesId: UUID, CustomerID: UUID ) {
+    init(id: UUID? = nil, Date: String, Time: String, AppointmentStatus: String,  PropertiesId: UUID, CustomerId: UUID ) {
         self.id = id
         self.Date = Date
         self.Time = Time
         self.AppointmentStatus = AppointmentStatus
         self.$properties.id = PropertiesId
-        self.$customer.id = CustomerID
+        self.$customer.id = CustomerId
 
         
     }

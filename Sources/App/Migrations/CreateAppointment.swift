@@ -11,12 +11,12 @@ struct CreateAppointment: AsyncMigration {
     func prepare(on database: Database) async throws {
         try await database.schema("Appointment")
             .id()
-            .field("title", .string, .required)
-            .field("Date", .string, .required)
-            .field("Time", .string, .required)
-            .field("AppointmentStatus", .string, .required)
+           // .field("title", .string )
+            .field("Date", .string )
+            .field("Time", .string )
+            .field("AppointmentStatus", .string)
             .field("PropertiesId", .uuid , .references("Properties", "id"))
-            .field("CustomerID", .uuid , .references("Customer", "id"))
+            .field("CustomerId", .uuid , .references("Customer", "id"))
             .create()
     }
 

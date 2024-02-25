@@ -20,7 +20,7 @@ final class Properties: Model , Content{
 
     
     @Field(key: "Type")
-    var name: String
+    var type: String
 
     @Field(key: "Size")
     var size: Int
@@ -58,7 +58,7 @@ final class Properties: Model , Content{
 
     init(id: UUID? = nil, name: String, size: Int, city: String, address: String, owner: String, agentID: UUID, price: Int, description: String, image: String, propertyStatus: String, AgentId: UUID) {
         self.id = id
-        self.name = name
+        self.type = type
         self.size = size
         self.city = city
         self.address = address

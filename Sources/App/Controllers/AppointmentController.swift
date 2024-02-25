@@ -23,16 +23,19 @@ struct AppointmentController: RouteCollection {
 //        }
     }
     
-    func index(req: Request) async throws -> [Appointment] {
-        try await Appointment.query(on: req.db).all()
-    }
-    
-    func create(req: Request) async throws -> Appointment {
-        let appointment = try req.content.decode(Appointment.self)
-        try await appointment.save(on: req.db)
-        return appointment
-    }
+
 }
+
+func index(req: Request) async throws -> [Appointment] {
+    try await Appointment.query(on: req.db).all()
+}
+
+func create(req: Request) async throws -> Appointment {
+    let appointment = try req.content.decode(Appointment.self)
+    try await appointment.save(on: req.db)
+    return appointment
+}
+
 func delete(req: Request) async throws -> HTTPStatus {
         guard let appointment = try await Appointment.find(req.parameters.get("appointmentID"), on: req.db) else {
             throw Abort(.notFound)
