@@ -74,28 +74,24 @@ The RealEstate app provides full CRUD (Create, Read, Update, Delete) functionali
 - **Customer**:
   - Create a new customer: `POST /api/customers`
   - Read all customers: `GET /api/customers`
-  - Read a specific customer: `GET /api/customers/:id`
   - Update a customer: `PUT /api/customers/:id`
   - Delete a customer: `DELETE /api/customers/:id`
 
 - **Agent**:
   - Create a new agent: `POST /api/agents`
   - Read all agents: `GET /api/agents`
-  - Read a specific agent: `GET /api/agents/:id`
   - Update an agent: `PUT /api/agents/:id`
   - Delete an agent: `DELETE /api/agents/:id`
 
 - **Properties**:
   - Create a new property: `POST /api/properties`
   - Read all properties: `GET /api/properties`
-  - Read a specific property: `GET /api/properties/:id`
   - Update a property: `PUT /api/properties/:id`
   - Delete a property: `DELETE /api/properties/:id`
 
 - **Appointment**:
   - Create a new appointment: `POST /api/appointments`
   - Read all appointments: `GET /api/appointments`
-  - Read a specific appointment: `GET /api/appointments/:id`
   - Update an appointment: `PUT /api/appointments/:id`
   - Delete an appointment: `DELETE /api/appointments/:id`
 
