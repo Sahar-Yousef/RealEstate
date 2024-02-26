@@ -4,6 +4,7 @@ Welcome to the RealEstate app! This app is designed to help manage and organize 
 
 ## Table of Contents
 
+- [App Statment](#App-Statment)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Database Schema](#database-schema)
@@ -11,6 +12,9 @@ Welcome to the RealEstate app! This app is designed to help manage and organize 
 - [CRUD Operations](#crud-operations)
 - [Technologies Used](#technologies-used)
 - [Conclusion](#conclusion)
+
+## App Statment
+create an a database for the real estate agents to manage the data
 
 ## Requirements
 
